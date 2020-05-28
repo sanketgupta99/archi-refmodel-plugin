@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Sample Category"
+            id="com.archimatetool.refmodel.commands.category">
+      </category>
+      <command
+            name="Sample Command"
+            categoryId="com.archimatetool.refmodel.commands.category"
+            id="com.archimatetool.refmodel.commands.sampleCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="com.archimatetool.refmodel.commands.sampleCommand"
+            class="com.archimatetool.refmodel.SampleHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.archimatetool.refmodel.commands.sampleCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            class="com.archimatetool.refmodel.NewModelFromRefModels"
+            locationURI="menu:com.archimatetool.menu.newDropdown?endof=com.archimatetool.menu.separatorNewDropdown">
+      </menuContribution>
+      
+      <menuContribution
+            allPopups="false"
+            class="com.archimatetool.refmodel.NewModelFromRefModels"
+            locationURI="menu:new_menu?after=new_menu.ext">
+      </menuContribution>
+      
+   </extension>
+ </plugin>
